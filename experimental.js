@@ -13,6 +13,13 @@ javascript:(function(){
   o.style.overflow = 'auto';
   document.body.appendChild(o);
 
+  var iframe = document.createElement('iframe');
+  iframe.src = 'https://www.bing.com/chat';
+  iframe.style.width = '100%';
+  iframe.style.height = '100%';
+  iframe.style.border = 'none';
+  o.appendChild(iframe);
+
   var w = document.createElement('div');
   w.style.position = 'absolute';
   w.style.top = '0';
