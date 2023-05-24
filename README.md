@@ -1,3 +1,2 @@
 # Zenly
-Open Source Bookmarklet for accessing AI via JavaScript for educational websites. 
-As of now, we only have a resizable dark mode gui with closing capabilities.
+Easily access GPT-3.5 Turbo via Bookmarklet Menu, easily bypassing GoGuardian.
