@@ -1,4 +1,4 @@
-(function() {
+javascript:(function() {
   if (document.getElementById('drag-window')) {
     showNotification('Zenly is already injected');
     return;
