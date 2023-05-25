@@ -7,7 +7,7 @@ Easily access ChatGPT via our Bookmarklet, easily bypassing GoGuardian. We are u
 - 97% Success Rate </br>
 - Super Cool Animations! </br>
 
-#Zenly Limitations
+# Zenly Limitations
 Zenly may not be able to work on some websites because of their security measures, some of these websites include: </br>
 - https://example.com (Reason: Weird CSS Styling) </br>
 - https://github.com (Reason: Security Measures by GitHub) </br>
