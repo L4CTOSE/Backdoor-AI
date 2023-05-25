@@ -12,7 +12,6 @@ javascript:(function() {
       return;
     }
     var o = document.createElement('div');
-    o.id = 'drag-window';
     o.style.position = 'fixed';
     o.style.top = '0';
     o.style.left = '0';
@@ -35,7 +34,7 @@ javascript:(function() {
     w.style.left = '0';
     w.style.width = '100%';
     w.style.height = '27px';
-    w.style.backgroundColor = '#2c2c2c';
+    w.style.backgroundColor = 'rgb(44 44 44)';
     w.style.borderRadius = '12px 12px 0 0';
     w.style.cursor = 'move';
     o.appendChild(w);
@@ -51,16 +50,6 @@ javascript:(function() {
     title.textContent = 'Zenly';
     title.style.userSelect = 'none';
     w.appendChild(title);
-    var cGray = document.createElement('div');
-    cGray.style.position = 'absolute';
-    cGray.style.top = '8px';
-    cGray.style.left = '9px';
-    cGray.style.width = '12px';
-    cGray.style.height = '12px';
-    cGray.style.backgroundColor = 'gray';
-    cGray.style.borderRadius = '6px';
-    cGray.style.cursor = 'pointer';
-    w.appendChild(cGray);
     var cOrange = document.createElement('div');
     cOrange.style.position = 'absolute';
     cOrange.style.top = '8px';
@@ -108,64 +97,6 @@ javascript:(function() {
     alertButton2.style.cursor = 'pointer';
     o.appendChild(alertButton2);
 
-    var settingsMenu = null;
-
-function openSettingsMenu() {
-  if (settingsMenu) {
-    return;
-  }
-  settingsMenu = document.createElement('div');
-  settingsMenu.style.position = 'absolute';
-  settingsMenu.style.top = '27px';
-  settingsMenu.style.left = '0';
-  settingsMenu.style.width = '100%';
-  settingsMenu.style.height = '153px';
-  settingsMenu.style.backgroundColor = '#1c1c1c';
-  settingsMenu.style.color = 'black';
-  settingsMenu.style.fontFamily = 'Poppins, sans-serif';
-  settingsMenu.style.padding = '10px';
-  settingsMenu.style.overflow = 'hidden';
-  settingsMenu.style.borderTopLeftRadius = '0';
-  settingsMenu.style.borderTopRightRadius = '0';
-  settingsMenu.style.borderBottomLeftRadius = '12px';
-  settingsMenu.style.borderBottomRightRadius = '12px';
-  settingsMenu.innerHTML = `
-    <pre>
-      <code>
-        <html>
-          <head>
-            <style>
-              /* zenly css styles here */
-            </style>
-          </head>
-          <body>
-            <p style="color: white;">Zenly Settings is being</p>
-            <p style="color: white;">worked on..</p>
-            <script>
-              /* zenly js code here */
-            </script>
-          </body>
-        </html>
-      </code>
-    </pre>
-  `;
-  o.appendChild(settingsMenu);
-
-  cGray.removeEventListener('click', openSettingsMenu);
-  cGray.addEventListener('click', closeSettingsMenu);
-}
-    function closeSettingsMenu() {
-      if (settingsMenu) {
-        settingsMenu.remove();
-        settingsMenu = null;
-      }
-
-      cGray.removeEventListener('click', closeSettingsMenu);
-      cGray.addEventListener('click', openSettingsMenu);
-    }
-
-    cGray.addEventListener('click', openSettingsMenu);
-
     cOrange.addEventListener('click', function() {
       o.style.opacity = '0';
       o.style.transform = 'scale(0)';
@@ -173,7 +104,6 @@ function openSettingsMenu() {
         o.parentNode.removeChild(o);
       }, 300);
     });
-
     cRed.addEventListener('click', function() {
       o.style.opacity = '0';
       o.style.transform = 'scale(0)';
@@ -185,7 +115,6 @@ function openSettingsMenu() {
     alertButton1.addEventListener('click', function() {
       alert('yo');
     });
-
     alertButton2.addEventListener('click', function() {
       alert('test');
     });
@@ -198,55 +127,65 @@ function openSettingsMenu() {
     var touchIdentifier = null;
 
     function handleStart(e) {
-      e.preventDefault();
       if (e.touches && e.touches.length === 1) {
+        e.preventDefault();
         isDragging = true;
-        startX = e.touches[0].pageX;
-        startY = e.touches[0].pageY;
-        initialLeft = parseInt(o.style.left || '0', 10);
-        initialTop = parseInt(o.style.top || '0', 10);
-        touchIdentifier = e.touches[0].identifier;
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        initialLeft = parseFloat(o.style.left) || 0;
+        initialTop = parseFloat(o.style.top) || 0;
+        o.style.cursor = 'move';
       } else if (!e.touches) {
         isDragging = true;
-        startX = e.pageX;
-        startY = e.pageY;
-        initialLeft = parseInt(o.style.left || '0', 10);
-        initialTop = parseInt(o.style.top || '0', 10);
+        startX = e.clientX;
+        startY = e.clientY;
+        initialLeft = parseFloat(o.style.left) || 0;
+        initialTop = parseFloat(o.style.top) || 0;
+        o.style.cursor = 'move';
       }
     }
 
     function handleMove(e) {
-      e.preventDefault();
-      if (!isDragging) {
-        return;
+      if (isDragging && e.touches && e.touches.length === 1) {
+        var offsetX = e.touches[0].clientX - startX;
+        var offsetY = e.touches[0].clientY - startY;
+        o.style.left = initialLeft + offsetX + 'px';
+        o.style.top = initialTop + offsetY + 'px';
+      } else if (isDragging && !e.touches) {
+        var offsetX = e.clientX - startX;
+        var offsetY = e.clientY - startY;
+        o.style.left = initialLeft + offsetX + 'px';
+        o.style.top = initialTop + offsetY + 'px';
       }
-      var pageX;
-      var pageY;
-      if (e.touches && e.touches.length === 1 && e.touches[0].identifier === touchIdentifier) {
-        pageX = e.touches[0].pageX;
-        pageY = e.touches[0].pageY;
-      } else if (!e.touches) {
-        pageX = e.pageX;
-        pageY = e.pageY;
-      } else {
-        return;
-      }
-      var deltaX = pageX - startX;
-      var deltaY = pageY - startY;
-      o.style.left = initialLeft + deltaX + 'px';
-      o.style.top = initialTop + deltaY + 'px';
     }
 
-    function handleEnd() {
+    function handleEnd(e) {
       isDragging = false;
-      touchIdentifier = null;
+      o.style.cursor = 'default';
     }
 
     w.addEventListener('mousedown', handleStart);
-    w.addEventListener('touchstart', handleStart, { passive: false });
     window.addEventListener('mousemove', handleMove);
-    window.addEventListener('touchmove', handleMove, { passive: false });
     window.addEventListener('mouseup', handleEnd);
+    w.addEventListener('touchstart', handleStart);
+    window.addEventListener('touchmove', handleMove);
     window.addEventListener('touchend', handleEnd);
+
+    var style = document.createElement('style');
+    document.head.appendChild(style);
+    var sheet = style.sheet;
+
+    sheet.insertRule('.drag-window{position:fixed;top:0;left:0;width:300px;height:180px;background-color:#1a1a1a;opacity:0;border-radius:12px;z-index:9999;transform:scale(0);transition:opacity 0.3s,transform 0.3s}', 0);
+    sheet.insertRule('.drag-window-bar{position:absolute;top:0;left:0;width:100%;height:27px;background-color:#2c2c2c;border-radius:12px 12px 0 0;cursor:move}', 0);
+    sheet.insertRule('.drag-window-title{position:absolute;top:4px;left:50%;transform:translateX(-50%);color:#fff;font-weight:700;font-family:Poppins,sans-serif;font-size:14px}', 0);
+    sheet.insertRule('.drag-window-alert-button{position:absolute;top:60px;padding:10px;background-color:#383838;color:#fff;border:none;border-radius:4px;cursor:pointer}', 0);
+
+    alertButton1.addEventListener('click', function() {
+      alert('Button 1 clicked!');
+    });
+
+    alertButton2.addEventListener('click', function() {
+      alert('Button 2 clicked!');
+    });
   }
 })();
