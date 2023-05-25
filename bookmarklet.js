@@ -3,11 +3,11 @@ javascript: (function() {
   o.style.position = 'fixed';
   o.style.top = '0';
   o.style.left = '0';
-  o.style.width = '250px';
-  o.style.height = '150px';
+  o.style.width = '300px';
+  o.style.height = '180px';
   o.style.backgroundColor = 'black';
   o.style.opacity = '1';
-  o.style.borderRadius = '10px';
+  o.style.borderRadius = '12px';
   o.style.zIndex = '9999';
   document.body.appendChild(o);
 
@@ -16,9 +16,9 @@ javascript: (function() {
   w.style.top = '0';
   w.style.left = '0';
   w.style.width = '100%';
-  w.style.height = '25px';
-  w.style.backgroundColor = 'rgba(0,0,0,0.8)';
-  w.style.borderRadius = '10px 10px 0 0';
+  w.style.height = '30px';
+  w.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+  w.style.borderRadius = '12px 12px 0 0';
   w.style.cursor = 'move';
   o.appendChild(w);
 
@@ -29,7 +29,7 @@ javascript: (function() {
   c.style.width = '16px';
   c.style.height = '16px';
   c.style.backgroundColor = 'red';
-  c.style.borderRadius = '50%';
+  c.style.borderRadius = '6px';
   c.style.cursor = 'pointer';
   w.appendChild(c);
 
@@ -72,11 +72,11 @@ javascript: (function() {
       position: fixed;
       top: 0;
       left: 0;
-      width: 250px;
-      height: 150px;
+      width: 300px;
+      height: 180px;
       background-color: black;
       opacity: 1;
-      border-radius: 10px;
+      border-radius: 12px;
       z-index: 9999;
     }
     .drag-window-bar {
@@ -84,9 +84,9 @@ javascript: (function() {
       top: 0;
       left: 0;
       width: 100%;
-      height: 25px;
+      height: 30px;
       background-color: rgba(0, 0, 0, 0.8);
-      border-radius: 10px 10px 0 0;
+      border-radius: 12px 12px 0 0;
       cursor: move;
     }
     .drag-window-close {
@@ -96,12 +96,12 @@ javascript: (function() {
       width: 16px;
       height: 16px;
       background-color: red;
-      border-radius: 50%;
+      border-radius: 6px;
       cursor: pointer;
     }
   `;
-
   document.head.appendChild(style);
+
   o.classList.add('drag-window');
   w.classList.add('drag-window-bar');
   c.classList.add('drag-window-close');
