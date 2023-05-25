@@ -1,4 +1,4 @@
-# Zenly Preview (NOT FINISHED!!)
+# Zenly Research Preview (NOT FINISHED!!)
 Easily access ChatGPT via our Bookmarklet, easily bypassing GoGuardian. Alot of stuff doesn't exist as of right now, this is just a preview on what we're working on. </br>
 
 # Zenly Features
