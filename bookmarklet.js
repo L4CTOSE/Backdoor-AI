@@ -6,6 +6,7 @@ javascript:(function() {
     initializeBookmarklet();
   };
   document.head.appendChild(link);
+
   function initializeBookmarklet() {
     if (document.getElementById('drag-window')) {
       return;
@@ -68,6 +69,33 @@ javascript:(function() {
     cRed.style.borderRadius = '6px';
     cRed.style.cursor = 'pointer';
     w.appendChild(cRed);
+    
+    var alertButton1 = document.createElement('button');
+    alertButton1.textContent = 'Zenly Chat';
+    alertButton1.style.position = 'absolute';
+    alertButton1.style.top = '60px';
+    alertButton1.style.left = '30px';
+    alertButton1.style.padding = '10px';
+    alertButton1.style.backgroundColor = '#383838';
+    alertButton1.style.color = 'white';
+    alertButton1.style.border = 'none';
+    alertButton1.style.borderRadius = '4px';
+    alertButton1.style.cursor = 'pointer';
+    o.appendChild(alertButton1);
+    
+    var alertButton2 = document.createElement('button');
+    alertButton2.textContent = 'Test Button';
+    alertButton2.style.position = 'absolute';
+    alertButton2.style.top = '60px';
+    alertButton2.style.left = '140px';
+    alertButton2.style.padding = '10px';
+    alertButton2.style.backgroundColor = '#383838';
+    alertButton2.style.color = 'white';
+    alertButton2.style.border = 'none';
+    alertButton2.style.borderRadius = '4px';
+    alertButton2.style.cursor = 'pointer';
+    o.appendChild(alertButton2);
+    
     cOrange.addEventListener('click', function() {
       o.style.opacity = '0';
       o.style.transform = 'scale(0)';
@@ -82,6 +110,14 @@ javascript:(function() {
         o.parentNode.removeChild(o);
       }, 300);
     });
+    
+    alertButton1.addEventListener('click', function() {
+      alert('yo');
+    });
+    alertButton2.addEventListener('click', function() {
+      alert('test');
+    });
+    
     var isDragging = false;
     var startX = 0;
     var startY = 0;
