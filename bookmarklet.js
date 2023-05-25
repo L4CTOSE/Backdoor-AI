@@ -172,16 +172,20 @@ javascript:(function() {
     window.addEventListener('touchend', handleEnd);
 
     var style = document.createElement('style');
-    style.innerHTML = '.drag-window{position:fixed;top:0;left:0;width:300px;height:180px;background-color:#1a1a1a;opacity:1;border-radius:12px;z-index:9999;}' +
-      '.drag-window-bar{position:absolute;top:0;left:0;width:100%;height:27px;background-color:#333;border-radius:12px 12px 0 0;cursor:move;}' +
-      '.drag-window-title{position:absolute;top:8px;left:50%;transform:translateX(-50%);color:white;font-weight:normal;font-family:Poppins,sans-serif;font-size:14px;user-select:none;}' +
-      '.drag-window-close{position:absolute;top:8px;right:26px;width:12px;height:12px;background-color:orange;border-radius:6px;cursor:pointer;}' +
-      '.drag-window-close::before{position:absolute;content:"";top:4px;left:2px;width:8px;height:4px;background-color:white;border-radius:2px;}' +
-      '.drag-window-close::after{position:absolute;content:"";top:2px;left:4px;width:4px;height:8px;background-color:white;border-radius:2px;}' +
-      '.drag-window-close:hover{background-color:red;}' +
-      '.drag-window-alert-button{position:absolute;top:60px;padding:10px;background-color:#383838;color:white;border:none;border-radius:4px;cursor:pointer;}' +
-      '.drag-window-alert-button:hover{background-color:#555;}' +
-      '.drag-window-alert-button:focus{outline:none;}';
     document.head.appendChild(style);
+    var sheet = style.sheet;
+
+    sheet.insertRule('.drag-window{position:fixed;top:0;left:0;width:300px;height:180px;background-color:#1a1a1a;opacity:0;border-radius:12px;z-index:9999;transform:scale(0);transition:opacity 0.3s,transform 0.3s}', 0);
+    sheet.insertRule('.drag-window-bar{position:absolute;top:0;left:0;width:100%;height:27px;background-color:#2c2c2c;border-radius:12px 12px 0 0;cursor:move}', 0);
+    sheet.insertRule('.drag-window-title{position:absolute;top:4px;left:50%;transform:translateX(-50%);color:#fff;font-weight:700;font-family:Poppins,sans-serif;font-size:14px}', 0);
+    sheet.insertRule('.drag-window-alert-button{position:absolute;top:60px;padding:10px;background-color:#383838;color:#fff;border:none;border-radius:4px;cursor:pointer}', 0);
+
+    alertButton1.addEventListener('click', function() {
+      alert('Button 1 clicked!');
+    });
+
+    alertButton2.addEventListener('click', function() {
+      alert('Button 2 clicked!');
+    });
   }
 })();
