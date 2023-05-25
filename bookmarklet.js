@@ -52,7 +52,7 @@ javascript:(function() {
     w.appendChild(title);
     var cOrange = document.createElement('div');
     cOrange.style.position = 'absolute';
-    cOrange.style.top = '3px';
+    cOrange.style.top = '7px';
     cOrange.style.right = '25px';
     cOrange.style.width = '16px';
     cOrange.style.height = '16px';
@@ -62,7 +62,7 @@ javascript:(function() {
     w.appendChild(cOrange);
     var cRed = document.createElement('div');
     cRed.style.position = 'absolute';
-    cRed.style.top = '3px';
+    cRed.style.top = '7px';
     cRed.style.right = '3px';
     cRed.style.width = '16px';
     cRed.style.height = '16px';
