@@ -5,7 +5,7 @@ We are unable to add AI functionality (basically the whole purpose of the projec
 - If you are using Zenly, and for whatever reason, you need to quickly close Zenly and don't have enough time to clikc on the close buttons, you can press **SHIFT + Z** to close Zenly. 
 
 # Zenly Limitations
-Zenly may not be able to work on some websites because of their security measures, some of these websites include: </br>
+Zenly may not be able to work on these websites: </br>
 - https://example.com (Reason: Weird CSS Styling) </br>
 - https://github.com (Reason: Security Measures by GitHub) </br>
 - https://www.iana.org/ (Reason: Security Measures by IANA) </br>
