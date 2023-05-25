@@ -5,6 +5,7 @@ Easily access GPT-3.5 Turbo via Bookmarklet Menu, easily bypassing GoGuardian. A
 - GUI </br>
 - Draggable Menu </br>
 - 97% Success Rate </br>
+- Super Cool Animations! </br>
 
 # Coming Soon to Zenly
 - GPT-3.5 API </br>
