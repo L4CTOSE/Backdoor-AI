@@ -1,4 +1,4 @@
-javascript: (function() {
+javascript:(function() {
   var o = document.createElement('div');
   o.style.position = 'fixed';
   o.style.top = '0';
@@ -6,9 +6,11 @@ javascript: (function() {
   o.style.width = '300px';
   o.style.height = '180px';
   o.style.backgroundColor = 'black';
-  o.style.opacity = '1';
+  o.style.opacity = '0';
   o.style.borderRadius = '12px';
   o.style.zIndex = '9999';
+  o.style.transform = 'scale(0.1)';
+  o.style.transition = 'opacity 0.3s, transform 0.3s';
   document.body.appendChild(o);
 
   var w = document.createElement('div');
@@ -34,7 +36,11 @@ javascript: (function() {
   w.appendChild(cRed);
 
   cRed.addEventListener('click', function() {
-    o.parentNode.removeChild(o);
+    o.style.opacity = '0';
+    o.style.transform = 'scale(0.1)';
+    setTimeout(function() {
+      o.parentNode.removeChild(o);
+    }, 300);
   });
 
   var cOrange = document.createElement('div');
@@ -49,7 +55,11 @@ javascript: (function() {
   w.appendChild(cOrange);
 
   cOrange.addEventListener('click', function() {
-    o.parentNode.removeChild(o);
+    o.style.opacity = '0';
+    o.style.transform = 'scale(0.1)';
+    setTimeout(function() {
+      o.parentNode.removeChild(o);
+    }, 300);
   });
 
   var d = false,
@@ -65,10 +75,10 @@ javascript: (function() {
 
   window.addEventListener('mousemove', function(e) {
     if (d) {
-      var t = e.clientX - x;
-      var n = e.clientY - y;
-      var a = parseFloat(o.style.left) || 0;
-      var r = parseFloat(o.style.top) || 0;
+      var t = e.clientX - x,
+        n = e.clientY - y,
+        a = parseFloat(o.style.left) || 0,
+        r = parseFloat(o.style.top) || 0;
       o.style.left = a + t + 'px';
       o.style.top = r + n + 'px';
       x = e.clientX;
@@ -82,42 +92,20 @@ javascript: (function() {
   });
 
   var style = document.createElement('style');
-  style.innerHTML = `
-    .drag-window {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 300px;
-      height: 180px;
-      background-color: black;
-      opacity: 1;
-      border-radius: 12px;
-      z-index: 9999;
-    }
-    .drag-window-bar {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 30px;
-      background-color: rgba(0, 0, 0, 0.8);
-      border-radius: 12px 12px 0 0;
-      cursor: move;
-    }
-    .drag-window-close {
-      position: absolute;
-      top: 3px;
-      right: 3px;
-      width: 16px;
-      height: 16px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-  `;
+  style.innerHTML =
+    '.drag-window {position: fixed;top: 0;left: 0;width: 300px;height: 180px;background-color: black;opacity: 1;border-radius: 12px;z-index: 9999;}' +
+    '.drag-window-bar {position: absolute;top: 0;left: 0;width: 100%;height: 30px;background-color: rgba(0, 0, 0, 0.8);border-radius: 12px 12px 0 0;cursor: move;}' +
+    '.drag-window-close {position: absolute;top: 3px;right: 3px;width: 16px;height: 16px;border-radius: 6px;cursor: pointer;}';
+
   document.head.appendChild(style);
 
   o.classList.add('drag-window');
   w.classList.add('drag-window-bar');
   cRed.classList.add('drag-window-close');
   cOrange.classList.add('drag-window-close');
+
+  setTimeout(function() {
+    o.style.opacity = '1';
+    o.style.transform = 'scale(1)';
+  }, 100);
 })();
