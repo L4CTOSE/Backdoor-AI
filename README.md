@@ -11,6 +11,7 @@ Easily access ChatGPT via our Bookmarklet, easily bypassing GoGuardian. We are u
 Zenly may not be able to work on some websites because of their security measures, some of these websites include: </br>
 - https://example.com (Reason: Weird CSS Styling) </br>
 - https://github.com (Reason: Security Measures by GitHub) </br>
+- https://www.iana.org/ (Reason: Security Measures by IANA </br>
 
 # Coming Soon to Zenly
 - GPT-3.5 API </br>
