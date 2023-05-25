@@ -22,18 +22,33 @@ javascript: (function() {
   w.style.cursor = 'move';
   o.appendChild(w);
 
-  var c = document.createElement('div');
-  c.style.position = 'absolute';
-  c.style.top = '3px';
-  c.style.right = '3px';
-  c.style.width = '16px';
-  c.style.height = '16px';
-  c.style.backgroundColor = 'red';
-  c.style.borderRadius = '6px';
-  c.style.cursor = 'pointer';
-  w.appendChild(c);
+  var cRed = document.createElement('div');
+  cRed.style.position = 'absolute';
+  cRed.style.top = '3px';
+  cRed.style.right = '3px';
+  cRed.style.width = '16px';
+  cRed.style.height = '16px';
+  cRed.style.backgroundColor = 'red';
+  cRed.style.borderRadius = '6px';
+  cRed.style.cursor = 'pointer';
+  w.appendChild(cRed);
 
-  c.addEventListener('click', function() {
+  cRed.addEventListener('click', function() {
+    o.parentNode.removeChild(o);
+  });
+
+  var cOrange = document.createElement('div');
+  cOrange.style.position = 'absolute';
+  cOrange.style.top = '3px';
+  cOrange.style.right = '25px';
+  cOrange.style.width = '16px';
+  cOrange.style.height = '16px';
+  cOrange.style.backgroundColor = 'orange';
+  cOrange.style.borderRadius = '6px';
+  cOrange.style.cursor = 'pointer';
+  w.appendChild(cOrange);
+
+  cOrange.addEventListener('click', function() {
     o.parentNode.removeChild(o);
   });
 
@@ -95,7 +110,6 @@ javascript: (function() {
       right: 3px;
       width: 16px;
       height: 16px;
-      background-color: red;
       border-radius: 6px;
       cursor: pointer;
     }
@@ -104,5 +118,6 @@ javascript: (function() {
 
   o.classList.add('drag-window');
   w.classList.add('drag-window-bar');
-  c.classList.add('drag-window-close');
+  cRed.classList.add('drag-window-close');
+  cOrange.classList.add('drag-window-close');
 })();
