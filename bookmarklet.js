@@ -33,8 +33,8 @@ javascript:(function() {
     w.style.top = '0';
     w.style.left = '0';
     w.style.width = '100%';
-    w.style.height = '30px';
-    w.style.backgroundColor = '#333333';
+    w.style.height = '27px';
+    w.style.backgroundColor = 'rgb(44 44 44)';
     w.style.borderRadius = '12px 12px 0 0';
     w.style.cursor = 'move';
     o.appendChild(w);
@@ -47,7 +47,7 @@ javascript:(function() {
     title.style.fontWeight = 'normal';
     title.style.fontFamily = 'Poppins, sans-serif';
     title.style.fontSize = '14px';
-    title.textContent = 'Zenly Production Build v0.75';
+    title.textContent = 'Zenly Production Build v0.76';
     title.style.userSelect = 'none';
     w.appendChild(title);
     var cOrange = document.createElement('div');
