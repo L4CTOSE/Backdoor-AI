@@ -40,14 +40,14 @@ javascript:(function() {
     o.appendChild(w);
     var title = document.createElement('div');
     title.style.position = 'absolute';
-    title.style.top = '8px';
+    title.style.top = '4px';
     title.style.left = '50%';
     title.style.transform = 'translateX(-50%)';
     title.style.color = 'white';
     title.style.fontWeight = 'normal';
     title.style.fontFamily = 'Poppins, sans-serif';
     title.style.fontSize = '14px';
-    title.textContent = 'Zenly PB v0.77';
+    title.textContent = 'Zenly PB v0.80';
     title.style.userSelect = 'none';
     w.appendChild(title);
     var cOrange = document.createElement('div');
