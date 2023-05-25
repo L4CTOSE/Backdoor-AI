@@ -136,12 +136,11 @@ javascript: (function() {
     });
 
     cOrange.addEventListener('click', function() {
-      alert('Close button clicked!');
-      o.parentNode.removeChild(o);
+      o.style.opacity = '0';
+      o.style.transform = 'scale(0)';
     });
 
     cRed.addEventListener('click', function() {
-      alert('Minimize button clicked!');
       o.style.opacity = '0';
       o.style.transform = 'scale(0)';
     });
