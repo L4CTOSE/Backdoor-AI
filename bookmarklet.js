@@ -57,17 +57,33 @@ javascript:(function() {
   w.appendChild(cRed);
   
   cOrange.addEventListener('click', function() {
-    o.parentNode.removeChild(o);
+    o.style.opacity = '0';
+    o.style.transform = 'scale(0)';
+    setTimeout(function() {
+      o.parentNode.removeChild(o);
+    }, 300);
+  });
+  
+  cRed.addEventListener('click', function() {
+    o.style.opacity = '0';
+    o.style.transform = 'scale(0)';
+    setTimeout(function() {
+      o.parentNode.removeChild(o);
+    }, 300);
   });
   
   var isDragging = false;
   var startX = 0;
   var startY = 0;
+  var initialLeft = 0;
+  var initialTop = 0;
   
   w.addEventListener('mousedown', function(e) {
     isDragging = true;
     startX = e.clientX;
     startY = e.clientY;
+    initialLeft = parseFloat(o.style.left) || 0;
+    initialTop = parseFloat(o.style.top) || 0;
     o.style.cursor = 'move';
   });
   
@@ -75,12 +91,8 @@ javascript:(function() {
     if (isDragging) {
       var offsetX = e.clientX - startX;
       var offsetY = e.clientY - startY;
-      var left = parseFloat(o.style.left) || 0;
-      var top = parseFloat(o.style.top) || 0;
-      o.style.left = left + offsetX + 'px';
-      o.style.top = top + offsetY + 'px';
-      startX = e.clientX;
-      startY = e.clientY;
+      o.style.left = initialLeft + offsetX + 'px';
+      o.style.top = initialTop + offsetY + 'px';
     }
   });
   
