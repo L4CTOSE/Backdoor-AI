@@ -12,9 +12,3 @@ Zenly may not be able to work on some websites because of their security measure
 - https://example.com (Reason: Weird CSS Styling) </br>
 - https://github.com (Reason: Security Measures by GitHub) </br>
 - https://www.iana.org/ (Reason: Security Measures by IANA) </br>
-
-# Coming Soon to Zenly
-- GPT-3.5 API </br>
-- Zenly AI Chat </br>
-- Google Forms Anticheat Bypass </br>
-- Support for: DeltaMath, Google Classroom, Canvas, etc.. </br>
