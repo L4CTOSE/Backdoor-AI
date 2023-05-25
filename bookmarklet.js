@@ -120,7 +120,7 @@ function openSettingsMenu() {
   settingsMenu.style.left = '0';
   settingsMenu.style.width = '100%';
   settingsMenu.style.height = '153px';
-  settingsMenu.style.backgroundColor = 'white';
+  settingsMenu.style.backgroundColor = '#1c1c1c';
   settingsMenu.style.color = 'black';
   settingsMenu.style.fontFamily = 'Poppins, sans-serif';
   settingsMenu.style.padding = '10px';
@@ -139,8 +139,8 @@ function openSettingsMenu() {
             </style>
           </head>
           <body>
-            <p> Zenly Settings Page is </p>
-            <p> being worked on.. </p>
+            <p style="color: white;">Zenly Settings is being</p>
+            <p style="color: white;">worked on..</p>
             <script>
               /* zenly js code here */
             </script>
