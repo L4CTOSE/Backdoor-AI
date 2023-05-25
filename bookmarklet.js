@@ -20,7 +20,7 @@ javascript:(function() {
     o.style.backgroundColor = '#1a1a1a';
     o.style.opacity = '0';
     o.style.borderRadius = '12px';
-    o.style.zIndex = '9999';
+    o.style.zIndex = '9999999999999';
     o.style.transform = 'scale(0)';
     o.style.transition = 'opacity 0.3s, transform 0.3s';
     document.body.appendChild(o);
