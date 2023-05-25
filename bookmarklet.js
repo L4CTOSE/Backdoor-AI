@@ -1,31 +1,6 @@
 javascript:(function() {
   if (document.getElementById('drag-window')) {
-    var toast = document.createElement('div');
-    toast.style.position = 'fixed';
-    toast.style.top = '0';
-    toast.style.left = '0';
-    toast.style.width = '100%';
-    toast.style.height = '100%';
-    toast.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-    toast.style.display = 'flex';
-    toast.style.justifyContent = 'center';
-    toast.style.alignItems = 'center';
-    toast.style.zIndex = '9999';
-    var spinner = document.createElement('div');
-    spinner.classList.add('lds-spinner');
-    for (var i = 0; i < 12; i++) {
-      var div = document.createElement('div');
-      spinner.appendChild(div);
-    }
-    toast.appendChild(spinner);
-    document.body.appendChild(toast);
-    setTimeout(function() {
-      toast.style.opacity = '0';
-      setTimeout(function() {
-        toast.parentNode.removeChild(toast);
-        showMainContent();
-      }, 500);
-    }, 1500);
+    showMainContent();
     return;
   }
 
@@ -141,6 +116,7 @@ javascript:(function() {
     var style = document.createElement('style');
     style.innerHTML = '.drag-window{position:fixed;top:0;left:0;width:300px;height:180px;background-color:black;opacity:1;border-radius:12px;z-index:9997;}.drag-window-bar{position:absolute;top:0;left:0;width:100%;height:30px;background-color:rgba(0, 0, 0, 0.8);border-radius:12px 12px 0 0;cursor:move;}.drag-window-close{position:absolute;top:3px;right:3px;width:16px;height:16px;border-radius:6px;cursor:pointer;}';
     document.head.appendChild(style);
+
     o.classList.add('drag-window');
     w.classList.add('drag-window-bar');
     cRed.classList.add('drag-window-close');
