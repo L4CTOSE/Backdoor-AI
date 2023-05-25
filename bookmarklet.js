@@ -1,5 +1,68 @@
 javascript:(function() {
+  if (document.getElementById('drag-window')) {
+    var toast = document.createElement('div');
+    toast.style.position = 'fixed';
+    toast.style.top = '-100px';
+    toast.style.left = '10px';
+    toast.style.width = '200px';
+    toast.style.padding = '10px';
+    toast.style.backgroundColor = '#f44336';
+    toast.style.color = '#ffffff';
+    toast.style.borderRadius = '4px';
+    toast.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.2)';
+    toast.style.zIndex = '9998';
+    toast.style.opacity = '0';
+    toast.style.transition = 'top 0.3s, opacity 0.3s';
+
+    var icon = document.createElement('span');
+    icon.style.display = 'inline-block';
+    icon.style.width = '20px';
+    icon.style.height = '20px';
+    icon.style.marginRight = '5px';
+    icon.style.backgroundImage = 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' fill=\'%23ffffff\' height=\'24\' viewBox=\'0 0 24 24\' width=\'24\'%3E%3Cpath d=\'M0 0h24v24H0z\' fill=\'none\'/%3E%3Cpath d=\'M0 0h24v24H0z\' fill=\'none\'/%3E%3Cpath d=\'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z\'/%3E%3C/svg%3E")';
+
+    var message = document.createElement('span');
+    message.textContent = 'Error! Zenly is already injected into this website';
+
+    var closeBtn = document.createElement('span');
+    closeBtn.style.position = 'absolute';
+    closeBtn.style.top = '0';
+    closeBtn.style.right = '0';
+    closeBtn.style.padding = '5px';
+    closeBtn.style.cursor = 'pointer';
+    closeBtn.textContent = '';
+    closeBtn.addEventListener('click', function() {
+      toast.style.top = '-100px';
+      toast.style.opacity = '0';
+      setTimeout(function() {
+        toast.parentNode.removeChild(toast);
+      }, 300);
+    });
+
+    toast.appendChild(icon);
+    toast.appendChild(message);
+    toast.appendChild(closeBtn);
+
+    document.body.appendChild(toast);
+
+    setTimeout(function() {
+      toast.style.top = '10px';
+      toast.style.opacity = '1';
+    }, 100);
+
+    setTimeout(function() {
+      toast.style.top = '-100px';
+      toast.style.opacity = '0';
+      setTimeout(function() {
+        toast.parentNode.removeChild(toast);
+      }, 300);
+    }, 3500);
+
+    return;
+  }
+
   var o = document.createElement('div');
+  o.id = 'drag-window';
   o.style.position = 'fixed';
   o.style.top = '0';
   o.style.left = '0';
@@ -8,9 +71,10 @@ javascript:(function() {
   o.style.backgroundColor = 'black';
   o.style.opacity = '0';
   o.style.borderRadius = '12px';
-  o.style.zIndex = '9999';
+  o.style.zIndex = '9998';
   o.style.transform = 'scale(0.1)';
   o.style.transition = 'opacity 0.3s, transform 0.3s';
+
   document.body.appendChild(o);
 
   var w = document.createElement('div');
@@ -34,7 +98,6 @@ javascript:(function() {
   cRed.style.borderRadius = '6px';
   cRed.style.cursor = 'pointer';
   w.appendChild(cRed);
-
   cRed.addEventListener('click', function() {
     o.style.opacity = '0';
     o.style.transform = 'scale(0.1)';
@@ -53,7 +116,6 @@ javascript:(function() {
   cOrange.style.borderRadius = '6px';
   cOrange.style.cursor = 'pointer';
   w.appendChild(cOrange);
-
   cOrange.addEventListener('click', function() {
     o.style.opacity = '0';
     o.style.transform = 'scale(0.1)';
@@ -65,7 +127,6 @@ javascript:(function() {
   var d = false,
     x = 0,
     y = 0;
-
   w.addEventListener('mousedown', function(e) {
     d = true;
     x = e.clientX;
@@ -92,11 +153,7 @@ javascript:(function() {
   });
 
   var style = document.createElement('style');
-  style.innerHTML =
-    '.drag-window {position: fixed;top: 0;left: 0;width: 300px;height: 180px;background-color: black;opacity: 1;border-radius: 12px;z-index: 9999;}' +
-    '.drag-window-bar {position: absolute;top: 0;left: 0;width: 100%;height: 30px;background-color: rgba(0, 0, 0, 0.8);border-radius: 12px 12px 0 0;cursor: move;}' +
-    '.drag-window-close {position: absolute;top: 3px;right: 3px;width: 16px;height: 16px;border-radius: 6px;cursor: pointer;}';
-
+  style.innerHTML = '.drag-window{position:fixed;top:0;left:0;width:300px;height:180px;background-color:black;opacity:1;border-radius:12px;z-index:9997;}.drag-window-bar{position:absolute;top:0;left:0;width:100%;height:30px;background-color:rgba(0, 0, 0, 0.8);border-radius:12px 12px 0 0;cursor:move;}.drag-window-close{position:absolute;top:3px;right:3px;width:16px;height:16px;border-radius:6px;cursor:pointer;}';
   document.head.appendChild(style);
 
   o.classList.add('drag-window');
