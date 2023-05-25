@@ -40,13 +40,14 @@ javascript:(function() {
     o.appendChild(w);
     var title = document.createElement('div');
     title.style.position = 'absolute';
-    title.style.top = '3px';
-    title.style.left = '5px';
+    title.style.top = '5px';
+    title.style.left = '50%';
+    title.style.transform = 'translateX(-50%)';
     title.style.color = 'white';
     title.style.fontWeight = 'normal';
     title.style.fontFamily = 'Poppins, sans-serif';
     title.style.fontSize = '14px';
-    title.textContent = ' Zenly';
+    title.textContent = 'Zenly Production Build v0.73';
     title.style.userSelect = 'none';
     w.appendChild(title);
     var cOrange = document.createElement('div');
@@ -170,12 +171,13 @@ javascript:(function() {
     window.addEventListener('touchmove', handleMove);
     window.addEventListener('touchend', handleEnd);
 
-    var style = document.createElement('style');
-    style.innerHTML = '.drag-window{position:fixed;top:0;left:0;width:300px;height:180px;background-color:#1a1a1a;opacity:1;border-radius:12px;z-index:9999;}' +
-      '.drag-window-bar{position:absolute;top:0;left:0;width:100%;height:27px;background-color:#333333;border-radius:12px 12px 0 0;cursor:move;}' +
-      '.drag-window-title{position:absolute;top:5px;left:5px;color:white;font-weight:normal;font-family:"Poppins",sans-serif;font-size:14px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}' +
-      '.drag-window-close{position:absolute;top:3px;right:25px;width:16px;height:16px;background-color:orange;border-radius:6px;cursor:pointer;}' +
-      '.drag-window-second-close{position:absolute;top:3px;right:3px;width:16px;height:16px;background-color:red;border-radius:6px;cursor:pointer;}';
+var style = document.createElement('style');
+style.innerHTML = '.drag-window{position:fixed;top:0;left:0;width:300px;height:180px;background-color:#1a1a1a;opacity:1;border-radius:12px;z-index:9999;}' +
+  '.drag-window-bar{position:absolute;top:0;left:0;width:100%;height:27px;background-color:#333333;border-radius:12px 12px 0 0;cursor:move;}' +
+  '.drag-window-title{position:absolute;top:5px;left:50%;transform:translateX(-50%);white-space: nowrap;color:white;font-weight:normal;font-family:"Poppins",sans-serif;font-size:14px;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}' +
+  '.drag-window-close{position:absolute;top:3px;right:25px;width:16px;height:16px;background-color:orange;border-radius:6px;cursor:pointer;}' +
+  '.drag-window-second-close{position:absolute;top:3px;right:3px;width:16px;height:16px;background-color:red;border-radius:6px;cursor:pointer;}';
+document.head.appendChild(style);
     document.head.appendChild(style);
     o.classList.add('drag-window');
     w.classList.add('drag-window-bar');
