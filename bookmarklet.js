@@ -1,4 +1,92 @@
 javascript:(function() {
+  var blacklist = [
+    'example.com',
+    'github.com',
+    'iana.org',
+    'raw.githubusercontent.com',
+    'githubusercontent.com'
+  ];
+
+  var currentURL = window.location.href;
+  for (var i = 0; i < blacklist.length; i++) {
+    if (currentURL.indexOf(blacklist[i]) !== -1) {
+      alert('Zenly isn\'t supported on this website 😓');
+      return;
+    }
+  }
+
+  var blacklist2 = [
+    'login.i-ready.com',
+    'i-ready.com',
+    'vidyard.com',
+    'cainc.com',
+    'cirriculumassociates.com',
+    'i-readyconnect.com',
+    'readycentral.com',
+    'learnosity.com',
+    'cloudfront.net',
+    'i-readycentral.com',
+    'readyclassroomcentral.com',
+    'teacher-toolbox.com',
+    'cdn.i-ready.com',
+    'cainc.i-ready.com',
+    'content.i-ready.com',
+    'connect.i-ready.com',
+    'i-readyconnect.com',
+    'help.i-ready.com',
+    'sso.i-ready.com',
+    'oel.i-ready.com',
+    'resource-library.i-ready.com',
+    'teacher-toolbox.i-ready.com',
+    'i-readycentral.com',
+    'math.readycentral.com',
+    'readyclassroomcentral.com',
+    'securemail.cainc.com',
+    'sftp.i-ready.com',
+    'teacher-toolbox.com',
+    'pd.i-ready.com',
+    'hec.i-ready.com',
+    'ca.vidyard.com',
+    'play.vidyard.com',
+    'share.vidyard.com',
+    'cdn.vidyard.com',
+    'embed.vidyard.com',
+    'support.curriculumassociates.com',
+    'videos.curriculumassociates.com',
+    'items.learnosity.com',
+    'items-va.learnosity.com',
+    'assess.learnosity.com',
+    'assess-va.learnosity.com',
+    'questions.learnosity.com',
+    'questions-va.learnosity.com',
+    'eventbus.learnosity.com',
+    'eventbus-va.learnosity.com',
+    'events.learnosity.com',
+    'reports.learnosity.com',
+    'events-va.learnosity.com',
+    'reports-va.learnosity.com',
+    'assets.learnosity.com',
+    'annotations.learnosity.com',
+    'annotations-va.learnosity.com',
+    'shared.learnosity.com',
+    'dw6y82u65ww8h.cloudfront.net',
+    'g.i-ready.com',
+    'g-api.i-ready.com',
+    'g-accounts.i-ready.com',
+    'g-statsc.i-ready.com',
+    'learnosity.com'
+  ];
+
+  var currentURL = window.location.href;
+  for (var i = 0; i < blacklist2.length; i++) {
+    if (currentURL.indexOf(blacklist2[i]) !== -1) {
+      alert('Zenly is not supported for i-Ready, but it will soon!');
+      return;
+    }
+  }
+
+
+
   var link = document.createElement('link');
   link.rel = 'stylesheet';
   link.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap';
@@ -170,22 +258,5 @@ javascript:(function() {
     w.addEventListener('touchstart', handleStart);
     window.addEventListener('touchmove', handleMove);
     window.addEventListener('touchend', handleEnd);
-
-    var style = document.createElement('style');
-    document.head.appendChild(style);
-    var sheet = style.sheet;
-
-    sheet.insertRule('.drag-window{position:fixed;top:0;left:0;width:300px;height:180px;background-color:#1a1a1a;opacity:0;border-radius:12px;z-index:9999;transform:scale(0);transition:opacity 0.3s,transform 0.3s}', 0);
-    sheet.insertRule('.drag-window-bar{position:absolute;top:0;left:0;width:100%;height:27px;background-color:#2c2c2c;border-radius:12px 12px 0 0;cursor:move}', 0);
-    sheet.insertRule('.drag-window-title{position:absolute;top:4px;left:50%;transform:translateX(-50%);color:#fff;font-weight:700;font-family:Poppins,sans-serif;font-size:14px}', 0);
-    sheet.insertRule('.drag-window-alert-button{position:absolute;top:60px;padding:10px;background-color:#383838;color:#fff;border:none;border-radius:4px;cursor:pointer}', 0);
-
-    alertButton1.addEventListener('click', function() {
-      alert('Button 1 clicked!');
-    });
-
-    alertButton2.addEventListener('click', function() {
-      alert('Button 2 clicked!');
-    });
   }
 })();
