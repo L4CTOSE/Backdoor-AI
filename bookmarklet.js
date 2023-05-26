@@ -48,6 +48,7 @@ javascript:(function() {
     o.style.zIndex = '9999999999999';
     o.style.transform = 'scale(0)';
     o.style.transition = 'opacity 0.3s, transform 0.3s';
+    o.style.boxShadow = '0 0 10px #000';
     document.body.appendChild(o);
     requestAnimationFrame(function() {
       o.style.opacity = '1';
