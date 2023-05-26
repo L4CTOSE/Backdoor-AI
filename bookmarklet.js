@@ -73,7 +73,7 @@ javascript:(function() {
     title.style.fontWeight = 'normal';
     title.style.fontFamily = 'Poppins, sans-serif';
     title.style.fontSize = '14px';
-    title.textContent = 'Zenly';
+    title.textContent = 'Zenly Dev Mode';
     title.style.userSelect = 'none';
     w.appendChild(title);
     var cOrange = document.createElement('div');
