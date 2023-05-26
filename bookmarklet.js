@@ -6,15 +6,6 @@ javascript:(function() {
     'raw.githubusercontent.com',
     'githubusercontent.com'
   ];
-
-  var currentURL = window.location.href;
-  for (var i = 0; i < blacklist.length; i++) {
-    if (currentURL.indexOf(blacklist[i]) !== -1) {
-      alert('Zenly isn\'t supported on this website 😓');
-      return;
-    }
-  }
-
   var blacklist2 = [
     'login.i-ready.com',
     'i-ready.com',
@@ -76,7 +67,6 @@ javascript:(function() {
     'g-statsc.i-ready.com',
     'learnosity.com'
   ];
-
   var currentURL = window.location.href;
   for (var i = 0; i < blacklist2.length; i++) {
     if (currentURL.indexOf(blacklist2[i]) !== -1) {
@@ -84,9 +74,13 @@ javascript:(function() {
       return;
     }
   }
-
-
-
+  var currentURL = window.location.href;
+  for (var i = 0; i < blacklist.length; i++) {
+    if (currentURL.indexOf(blacklist[i]) !== -1) {
+      alert('Zenly isn\'t supported on this website 😓');
+      return;
+    }
+  }
   var link = document.createElement('link');
   link.rel = 'stylesheet';
   link.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap';
