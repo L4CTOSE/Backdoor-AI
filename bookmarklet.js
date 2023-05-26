@@ -24,14 +24,10 @@ javascript:(function() {
     o.style.transform = 'scale(0)';
     o.style.transition = 'opacity 0.3s, transform 0.3s';
     document.body.appendChild(o);
-
-    setTimeout(function() {
-      requestAnimationFrame(function() {
-        o.style.opacity = '1';
-        o.style.transform = 'scale(1)';
-      });
-    }, 300);
-
+    requestAnimationFrame(function() {
+      o.style.opacity = '1';
+      o.style.transform = 'scale(1)';
+    });
     var w = document.createElement('div');
     w.style.position = 'absolute';
     w.style.top = '0';
@@ -180,18 +176,16 @@ javascript:(function() {
     var sheet = style.sheet;
 
     sheet.insertRule('.drag-window{position:fixed;top:0;left:0;width:300px;height:180px;background-color:#1a1a1a;opacity:0;border-radius:12px;z-index:9999;transform:scale(0);transition:opacity 0.3s,transform 0.3s}', 0);
-    sheet.insertRule('.drag-window.open{opacity:1;transform:scale(1)}', 0);
-    sheet.insertRule('.drag-window .drag-title{position:absolute;top:0;left:0;width:100%;height:27px;background-color:#2c2c2c;border-radius:12px 12px 0 0;cursor:move}', 0);
-    sheet.insertRule('.drag-window .drag-title .title{position:absolute;top:4px;left:50%;transform:translateX(-50%);color:#fff;font-weight:normal;font-size:14px;font-family:Poppins,sans-serif}', 0);
-    sheet.insertRule('.drag-window .drag-title .close{position:absolute;top:8px;right:26px;width:12px;height:12px;background-color:#f90;border-radius:6px;cursor:pointer}', 0);
-    sheet.insertRule('.drag-window .drag-title .minimize{position:absolute;top:8px;right:9px;width:12px;height:12px;background-color:#f00;border-radius:6px;cursor:pointer}', 0);
-    sheet.insertRule('.drag-window .drag-content{position:absolute;top:27px;left:0;width:100%;height:100%;padding:10px;overflow-y:auto}', 0);
-    sheet.insertRule('.drag-window .drag-content p{margin:0}', 0);
+    sheet.insertRule('.drag-window-bar{position:absolute;top:0;left:0;width:100%;height:27px;background-color:#2c2c2c;border-radius:12px 12px 0 0;cursor:move}', 0);
+    sheet.insertRule('.drag-window-title{position:absolute;top:4px;left:50%;transform:translateX(-50%);color:#fff;font-weight:700;font-family:Poppins,sans-serif;font-size:14px}', 0);
+    sheet.insertRule('.drag-window-alert-button{position:absolute;top:60px;padding:10px;background-color:#383838;color:#fff;border:none;border-radius:4px;cursor:pointer}', 0);
 
-    var dragWindow = document.createElement('div');
-    dragWindow.id = 'drag-window';
-    dragWindow.className = 'drag-window';
-    dragWindow.innerHTML = '<div class="drag-title"><div class="title">Zenly</div><div class="close"></div><div class="minimize"></div></div><div class="drag-content"><p>Welcome to Zenly!</p><p>Here you can chat and test buttons.</p></div>';
-    document.body.appendChild(dragWindow);
+    alertButton1.addEventListener('click', function() {
+      alert('Button 1 clicked!');
+    });
+
+    alertButton2.addEventListener('click', function() {
+      alert('Button 2 clicked!');
+    });
   }
 })();
