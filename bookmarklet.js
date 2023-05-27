@@ -4,7 +4,8 @@ javascript:(function() {
     'github.com',
     'iana.org',
     'raw.githubusercontent.com',
-    'githubusercontent.com'
+    'githubusercontent.com',
+    'discord.com'
   ];
   var blacklist2 = [
     'login.i-ready.com',
