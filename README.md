@@ -1,3 +1,6 @@
+# Installation
+Unzip Zenly.zip, and "Load unpacked" on chrome://extensions
+Alternatively, You can use *bookmarklet.js* and run Zenly as a bookmarklet, if you can't use extensions </br>
 # What is Zenly?
 Zenly is an experimental project that I've been working on for the past week that has had an insane amount of updates. Zenly aims to be the "all-in-one" solution for School Assignments and classwork, homework, and whatnot. </br>
 https://discord.gg/s98JWZC8DU </br>
