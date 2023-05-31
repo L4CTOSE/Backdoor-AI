@@ -1,7 +1,7 @@
 # What is Zenly?
 Zenly is an experimental project that I've been working on for the past week that has had an insane amount of updates. Zenly aims to be the "all-in-one" solution for School Assignments and Classwork, Homework, and whatnot. </br>
 
-# Why won't Zenly AI Work?
+# Why won't Zenly Chatmode Work?
 We can't afford to open an OpenAI API Currently. We'll still update Zenly, but don't expect it to be useable for now.. </br>
 
 # Why is Zenly obfuscated?
