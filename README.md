@@ -1,3 +1,5 @@
+# Free Research Preview
+Zenly isn't working right now, but it will soon. </br>
 # Installation
 Method 1: Extension </br>
 Unzip Zenly.zip, and "Load unpacked" on chrome://extensions </br>
