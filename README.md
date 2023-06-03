@@ -1,5 +1,6 @@
 # Free Research Preview
 Zenly isn't working right now, but it will soon. </br>
+This project is licensed under the terms of the CC BY-NC-ND 3.0 license. See LICENSE for more details. </br>
 # Installation
 Method 1: Extension </br>
 Unzip Zenly.zip, and "Load unpacked" on chrome://extensions </br>
