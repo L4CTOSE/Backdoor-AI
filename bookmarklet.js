@@ -35,9 +35,14 @@ javascript:(function() {
           var response = JSON.parse(xhr.responseText);
           var answer = response.answer;
           alert(answer);
-        } else {
-          var errorMessage = "Contacting ChatGPT Failed... Try again: " + userInput;
-          alert(errorMessage);
+        } else if (xhr.status === 500 || xhr.responseText.includes('Rate limit reached')) {
+          var dummyElement = document.createElement('textarea');
+          dummyElement.value = userInput;
+          document.body.appendChild(dummyElement);
+          dummyElement.select();
+          document.execCommand('copy');
+          document.body.removeChild(dummyElement);
+          alert("Contacting ChatGPT Failed... Your prompt has been copied to your clipboard");
         }
       }
     };
