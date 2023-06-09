@@ -1,2 +1,2 @@
-# Zenly Beta
+# Zenly Open Source
 Zenly is now avaliable for public use! 🥳 Simply use **bookmarklet.js** as a bookmarklet. </br>
