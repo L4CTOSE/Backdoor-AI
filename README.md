@@ -1,3 +1,3 @@
 # AI Anywhere by L4CTOSE
-We're currently rewriting the entirity of our JavaScript bookmarklet version and the extension version as we need to adjust for major changes.. </br>
-Try **replacement.js** if you still need a reliable and quick way to access AI Anywhere. It may take a couple of seconds to load.
+We're currently rewriting our JS and Chrome Extension versions, so our full project is unavailable for now.. </br>
+Try **replacement.js** if you still need a reliable and quick way to access AI Anywhere.
