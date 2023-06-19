@@ -10,4 +10,4 @@ White Button = Open the Web Browser <br>
 Buttons = Pre-made Scripts by me <br>
 
 # Warning
-The bookmarklet will CLOSE automatically as a safety precaution against reverse enginerring attempts <br>
+The bookmarklet will CLOSE automatically as a safety precaution against reverse engineering attempts <br>
