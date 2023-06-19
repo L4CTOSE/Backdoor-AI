@@ -8,6 +8,7 @@ We're not done coding. If you want to test our service, visit https://backdoor.l
 Red/Orange Buttons = Close the Window <br>
 White Button = Open the Web Browser <br>
 Buttons = Pre-made Scripts by me <br>
+This project is basically designed to be as idiot-proof as possible <br>
 
 # Warning
 The bookmarklet will CLOSE automatically as a safety precaution against reverse engineering attempts <br>
