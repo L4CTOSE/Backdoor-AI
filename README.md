@@ -1,8 +1,6 @@
-# Backdoor AI
+# Backdoor AI BETA
 ![alt text](https://github.com/L4CTOSE/Backdoor/blob/main/backdoor.png?raw=true) <br>
-
-# Experimental Preview
-We're not done coding. If you want to test our service, view the Backdoor AI folder <br>
+![alt text](https://github.com/L4CTOSE/Backdoor/blob/main/cascasc.png?raw=true) <br>
 
 # Controls
 Red/Orange Buttons = Close the Window <br>
