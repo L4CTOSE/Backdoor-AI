@@ -1,5 +1,6 @@
 # Backdoor AI (WIP, Not Done!)
 Backdoor AI is an experimental JavaScript Bookmarklet & Chrome Extension that aims to provide AI-Powered tools to aid in completing online and offline assignments to make life easier <br>
+This project is CLOSED SOURCE to protect our code integrity. If you want access to the open source version, become a contributor. <br>
 ![alt text](https://github.com/L4CTOSE/Backdoor/blob/main/backdoor.png?raw=true) <br>
 ![alt text](https://github.com/L4CTOSE/Backdoor/blob/main/cascasc.png?raw=true) <br>
 ![alt text](https://github.com/L4CTOSE/Backdoor/blob/main/hi.png?raw=true) <br>
