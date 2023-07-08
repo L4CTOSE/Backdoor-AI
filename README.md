@@ -1,1 +1,2 @@
-Learn more at https://backdoor.best/
+# Backdoor AI
+We're moving away from GitHub to improve user-experience for non tech-savvy users, which should be pretty obvious since this tool is designed to be as idiot-proof as possible. Visit https://backdoor.best/ to get out latest tools. We do have exclusive tools over here, though. Like our chrome extension, its exactly the same as our bookmarklet, but since its an extension, it allows us to use more advanced browser function that lets us execute our code on more websites where our bookmarklet usually wouldn't work.
